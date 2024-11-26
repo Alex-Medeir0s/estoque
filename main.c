@@ -77,3 +77,16 @@ void adicionarProduto() {
 
     printf("Produto adicionado com sucesso!\n");
 }
+void consultarEstoque() {
+    if (totalProdutos == 0) {
+        printf("O estoque est  vazio.\n");
+        return;
+    }
+
+    printf("\n=== Estoque ===\n");
+    for (int i = 0; i < totalProdutos; i++) {
+        printf("Produto: %s | Quantidade: %d | Pre o: R$%.2f\n",
+               estoque[i].nome, estoque[i].quantidade, estoque[i].preco);
+    }
+    printf("================\n");
+}
