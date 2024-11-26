@@ -25,7 +25,7 @@ int main() {
 
     do {
         exibirMenu();
-        printf("Escolha uma opção: ");
+        printf("Escolha uma opï¿½ï¿½o: ");
         scanf("%d", &opcao);
 
         switch (opcao) {
@@ -42,7 +42,7 @@ int main() {
                 printf("Encerrando o programa...\n");
                 break;
             default:
-                printf("Opção inválida. Tente novamente.\n");
+                printf("Opï¿½ï¿½o invï¿½lida. Tente novamente.\n");
         }
     } while (opcao != 4);
 
@@ -57,64 +57,4 @@ void exibirMenu() {
     printf("3. Vender produto\n");
     printf("4. Sair\n");
     printf("===========================================\n");
-}
-
-void adicionarProduto() {
-    if (totalProdutos >= MAX_PRODUTOS) {
-        printf("Estoque cheio! Não é possível adicionar mais produtos.\n");
-        return;
-    }
-
-    Produto novoProduto;
-    printf("Digite o nome do produto: ");
-    scanf("%s", novoProduto.nome);
-    printf("Digite a quantidade: ");
-    scanf("%d", &novoProduto.quantidade);
-    printf("Digite o preço: ");
-    scanf("%f", &novoProduto.preco);
-
-    estoque[totalProdutos] = novoProduto;
-    totalProdutos++;
-
-    printf("Produto adicionado com sucesso!\n");
-}
-
-
-void consultarEstoque() {
-    if (totalProdutos == 0) {
-        printf("O estoque está vazio.\n");
-        return;
-    }
-
-    printf("\n=== Estoque ===\n");
-    for (int i = 0; i < totalProdutos; i++) {
-        printf("Produto: %s | Quantidade: %d | Preço: R$%.2f\n",
-               estoque[i].nome, estoque[i].quantidade, estoque[i].preco);
-    }
-    printf("================\n");
-}
-
-
-void venderProduto() {
-    char nome[50];
-    int quantidade;
-
-    printf("Digite o nome do produto: ");
-    scanf("%s", nome);
-    printf("Digite a quantidade vendida: ");
-    scanf("%d", &quantidade);
-
-    for (int i = 0; i < totalProdutos; i++) {
-        if (strcmp(estoque[i].nome, nome) == 0) {
-            if (estoque[i].quantidade >= quantidade) {
-                estoque[i].quantidade -= quantidade;
-                printf("Venda realizada com sucesso!\n");
-            } else {
-                printf("Quantidade insuficiente no estoque!\n");
-            }
-            return;
-        }
-    }
-
-    printf("Produto não encontrado no estoque!\n");
 }
