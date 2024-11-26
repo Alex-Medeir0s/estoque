@@ -1,7 +1,7 @@
 #include <stdio.h>
 #include <string.h>
 
-#define MAX_PRODUTOS 100
+#define MAX_PRODUTOS 5
 
 
 typedef struct {
