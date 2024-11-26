@@ -58,3 +58,22 @@ void exibirMenu() {
     printf("4. Sair\n");
     printf("===========================================\n");
 }
+void adicionarProduto() {
+    if (totalProdutos >= MAX_PRODUTOS) {
+        printf("Estoque cheio! N o   poss vel adicionar mais produtos.\n");
+        return;
+    }
+
+    Produto novoProduto;
+    printf("Digite o nome do produto: ");
+    scanf("%s", novoProduto.nome);
+    printf("Digite a quantidade: ");
+    scanf("%d", &novoProduto.quantidade);
+    printf("Digite o pre o: ");
+    scanf("%f", &novoProduto.preco);
+
+    estoque[totalProdutos] = novoProduto;
+    totalProdutos++;
+
+    printf("Produto adicionado com sucesso!\n");
+}
