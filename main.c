@@ -90,3 +90,26 @@ void consultarEstoque() {
     }
     printf("================\n");
 }
+void venderProduto() {
+    char nome[50];
+    int quantidade;
+
+    printf("Digite o nome do produto: ");
+    scanf("%s", nome);
+    printf("Digite a quantidade vendida: ");
+    scanf("%d", &quantidade);
+
+    for (int i = 0; i < totalProdutos; i++) {
+        if (strcmp(estoque[i].nome, nome) == 0) {
+            if (estoque[i].quantidade >= quantidade) {
+                estoque[i].quantidade -= quantidade;
+                printf("Venda realizada com sucesso!\n");
+            } else {
+                printf("Quantidade insuficiente no estoque!\n");
+            }
+            return;
+        }
+    }
+
+    printf("Produto n o encontrado no estoque!\n");
+}
