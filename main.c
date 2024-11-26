@@ -25,7 +25,7 @@ int main() {
 
     do {
         exibirMenu();
-        printf("Escolha uma op��o: ");
+        printf("Escolha uma opcao: ");
         scanf("%d", &opcao);
 
         switch (opcao) {
@@ -42,7 +42,7 @@ int main() {
                 printf("Encerrando o programa...\n");
                 break;
             default:
-                printf("Op��o inv�lida. Tente novamente.\n");
+                printf("Opcaoo invalida. Tente novamente.\n");
         }
     } while (opcao != 4);
 
@@ -60,7 +60,7 @@ void exibirMenu() {
 }
 void adicionarProduto() {
     if (totalProdutos >= MAX_PRODUTOS) {
-        printf("Estoque cheio! N o   poss vel adicionar mais produtos.\n");
+        printf("Estoque cheio! nao e possivel adicionar mais produtos.\n");
         return;
     }
 
@@ -69,7 +69,7 @@ void adicionarProduto() {
     scanf("%s", novoProduto.nome);
     printf("Digite a quantidade: ");
     scanf("%d", &novoProduto.quantidade);
-    printf("Digite o pre o: ");
+    printf("Digite o preco: ");
     scanf("%f", &novoProduto.preco);
 
     estoque[totalProdutos] = novoProduto;
@@ -79,13 +79,13 @@ void adicionarProduto() {
 }
 void consultarEstoque() {
     if (totalProdutos == 0) {
-        printf("O estoque est  vazio.\n");
+        printf("O estoque esta vazio.\n");
         return;
     }
 
     printf("\n=== Estoque ===\n");
     for (int i = 0; i < totalProdutos; i++) {
-        printf("Produto: %s | Quantidade: %d | Pre o: R$%.2f\n",
+        printf("Produto: %s | Quantidade: %d | Preco: R$%.2f\n",
                estoque[i].nome, estoque[i].quantidade, estoque[i].preco);
     }
     printf("================\n");
@@ -111,5 +111,5 @@ void venderProduto() {
         }
     }
 
-    printf("Produto n o encontrado no estoque!\n");
+    printf("Produto nao encontrado no estoque!\n");
 }
